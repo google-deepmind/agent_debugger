@@ -1,0 +1,8 @@
+chex
+dm-env
+dm-haiku
+dm-tree
+jax
+numpy
+pycolab
+scipy

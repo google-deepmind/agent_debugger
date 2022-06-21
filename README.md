@@ -1,25 +1,40 @@
 # agent_debugger
 
-TODO(b/235068711): Add a description for your new project, explain what is
-being released here, etc... Additional, the following sections are normally
-expected for all releases. Feel free to add additional sections if appropriate
-for your project.
+This repository contains the code associated with the paper [Causal analysis of
+agent behaviour for AI safety.](https://arxiv.org/abs/2103.03938) (Deletang
+et al., 2021). The main tool is called
+the "Agent Debugger", which allows to do some causal interventions on the
+environment to infer the causal model of an agent.
+
+The only supported environment yet is Pycoworld, a 2D gridworld based on the
+open source game engine [Pycolab](https://github.com/deepmind/pycolab).
 
 ## Installation
 
-Write instructions for how the user should install your code. The instructions
-should ideally be valid when copy-pasted. You can combine this with the Usage
-section if there's no separate installation step.
+`pip install -r requirements.txt`
 
 ## Usage
 
-Write example usage of your code. The instructions should ideally be valid when
-copy-pasted, and will be used by your technical reviewer to verify that your
-package functions correctly.
+See the 'experiments' [notebook](https://colab.research.google.com/github/deepmind/agent_debugger/blob/master/colabs/experiments.ipynb) to reproduce the experiments of the paper.
 
 ## Citing this work
 
-Add citation details here, usually a pastable BibTeX snippet.
+```bibtex
+@misc{deletang2021causal,
+  author    = {Gr{\'{e}}goire Del{\'{e}}tang and
+               Jordi Grau{-}Moya and
+               Miljan Martic and
+               Tim Genewein and
+               Tom McGrath and
+               Vladimir Mikulik and
+               Markus Kunesch and
+               Shane Legg and
+               Pedro A. Ortega},
+  title     = {Causal Analysis of Agent Behavior for {AI} Safety},
+  year      = {2021},
+  eprint    = {arXiv:2103.03938},
+}
+```
 
 ## License and disclaimer
 
