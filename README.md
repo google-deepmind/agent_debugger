@@ -1,4 +1,4 @@
-# agent_debugger
+# Agent Debugger
 
 This repository contains the code associated with the paper [Causal analysis of
 agent behaviour for AI safety.](https://arxiv.org/abs/2103.03938) (Deletang
