@@ -53,7 +53,7 @@ class InterventionContext:
 
   def __enter__(self) -> Type['InterventionContext']:
     """Returns the object itself when we enter the context."""
-    return self
+    return self  # pytype: disable=bad-return-type
 
   def __exit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:
     """Applies some postprocessing and computes the new node to return."""
@@ -95,9 +95,9 @@ class PycoworldInterventions(default_interventions.DefaultInterventions):
       A new node, where the sprite is (in)visible.
     """
     with InterventionContext(node) as context:
-      sprite = context.engine._sprites_and_drapes[chr(sprite_id)]
+      sprite = context.engine._sprites_and_drapes[chr(sprite_id)]  # pytype: disable=attribute-error
       sprite._visible = visibility
-    return context.new_node
+    return context.new_node  # pytype: disable=attribute-error
 
   def move_sprite_to(
       self,
@@ -119,9 +119,9 @@ class PycoworldInterventions(default_interventions.DefaultInterventions):
     with InterventionContext(node) as context:
       dest_position = types.to_pycolab_position(dest_position)
       _check_positive_position(dest_position)
-      sprite = context.engine._sprites_and_drapes[chr(sprite_id)]
+      sprite = context.engine._sprites_and_drapes[chr(sprite_id)]  # pytype: disable=attribute-error
       sprite._position = dest_position
-    return context.new_node
+    return context.new_node  # pytype: disable=attribute-error
 
   def move_drape_element_to(
       self,
@@ -149,10 +149,10 @@ class PycoworldInterventions(default_interventions.DefaultInterventions):
       start_position = types.to_pycolab_position(start_position)
       _check_positive_position(start_position)
       _check_positive_position(dest_position)
-      drape = context.engine._sprites_and_drapes[chr(drape_id)]
+      drape = context.engine._sprites_and_drapes[chr(drape_id)]  # pytype: disable=attribute-error
       drape._c_u_r_t_a_i_n[start_position] = False
       drape._c_u_r_t_a_i_n[tuple(dest_position)] = True
-    return context.new_node
+    return context.new_node  # pytype: disable=attribute-error
 
   def remove_drape_element(
       self,
@@ -175,9 +175,9 @@ class PycoworldInterventions(default_interventions.DefaultInterventions):
     with InterventionContext(node) as context:
       position = types.to_pycolab_position(position)
       _check_positive_position(position)
-      drape = context.engine._sprites_and_drapes[chr(drape_id)]
+      drape = context.engine._sprites_and_drapes[chr(drape_id)]  # pytype: disable=attribute-error
       drape._c_u_r_t_a_i_n[position] = False
-    return context.new_node
+    return context.new_node  # pytype: disable=attribute-error
 
   def add_drape_element(
       self,
@@ -200,9 +200,9 @@ class PycoworldInterventions(default_interventions.DefaultInterventions):
     with InterventionContext(node) as context:
       position = types.to_pycolab_position(position)
       _check_positive_position(position)
-      drape = context.engine._sprites_and_drapes[chr(drape_id)]
+      drape = context.engine._sprites_and_drapes[chr(drape_id)]  # pytype: disable=attribute-error
       drape._c_u_r_t_a_i_n[position] = True
-    return context.new_node
+    return context.new_node  # pytype: disable=attribute-error
 
   def replace_backdrop_element(
       self,
@@ -224,10 +224,10 @@ class PycoworldInterventions(default_interventions.DefaultInterventions):
     with InterventionContext(node) as context:
       position = types.to_pycolab_position(position)
       _check_positive_position(position)
-      context.engine._backdrop._p_a_l_e_t_t_e._legal_characters.add(
+      context.engine._backdrop._p_a_l_e_t_t_e._legal_characters.add(  # pytype: disable=attribute-error
           chr(new_element_id))
-      context.engine._backdrop.curtain[tuple(position)] = new_element_id
-    return context.new_node
+      context.engine._backdrop.curtain[tuple(position)] = new_element_id  # pytype: disable=attribute-error
+    return context.new_node  # pytype: disable=attribute-error
 
   def set_frame_count(
       self,
@@ -248,7 +248,7 @@ class PycoworldInterventions(default_interventions.DefaultInterventions):
     with InterventionContext(node) as context:
       if frame_count < 0:
         raise ValueError(f'The frame count must be positive. Got {frame_count}')
-      context.engine._the_plot._frame = frame_count
-    return context.new_node
+      context.engine._the_plot._frame = frame_count  # pytype: disable=attribute-error
+    return context.new_node  # pytype: disable=attribute-error
 
   # pylint: enable=protected-access
