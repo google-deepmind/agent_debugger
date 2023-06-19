@@ -14,7 +14,7 @@
 # ==============================================================================
 
 """Grass sand level."""
-from typing import Tuple, Optional
+from typing import Optional
 
 import jax
 import numpy as np
@@ -39,7 +39,7 @@ class GrassSandLevel(base_level.PycoworldLevel):
       corr: float = 1.0,
       above: Optional[np.ndarray] = None,
       below: Optional[np.ndarray] = None,
-      reward_pos: Optional[Tuple[np.ndarray, np.ndarray]] = None,
+      reward_pos: Optional[tuple[np.ndarray, np.ndarray]] = None,
       double_terminal_event: Optional[bool] = False,
   ) -> None:
     """Initializes the level.
@@ -80,7 +80,7 @@ class GrassSandLevel(base_level.PycoworldLevel):
   def foreground_and_background(
       self,
       rng: np.ndarray,
-  ) -> Tuple[np.ndarray, np.ndarray]:
+  ) -> tuple[np.ndarray, np.ndarray]:
     """See base class."""
     rng1, rng2 = jax.random.split(rng, 2)
     # Do not modify the base maps during sampling

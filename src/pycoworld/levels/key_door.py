@@ -19,8 +19,6 @@ In this level there is a key and a door. Behind the door there is a reward. The
 agent must learn to collect the key, open the door and obtain the reward.
 """
 
-from typing import Tuple
-
 import jax
 import jax.numpy as jnp
 import numpy as np
@@ -51,7 +49,7 @@ class KeyDoorLevel(base_level.PycoworldLevel):
   def foreground_and_background(
       self,
       rng: jnp.ndarray,
-  ) -> Tuple[np.ndarray, np.ndarray]:
+  ) -> tuple[np.ndarray, np.ndarray]:
     """Returns a tuple with the level foreground and background.
 
     We first determine the state of the door and use the tile associated with

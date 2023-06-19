@@ -20,7 +20,7 @@ These are methods of the form (node, **params) -> new_node.
 
 import copy
 import dataclasses
-from typing import Any, Type
+from typing import Any
 
 import dm_env
 
@@ -51,7 +51,7 @@ class InterventionContext:
     self.engine = self._env_state.current_game
     self.new_node = None
 
-  def __enter__(self) -> Type['InterventionContext']:
+  def __enter__(self) -> type['InterventionContext']:
     """Returns the object itself when we enter the context."""
     return self  # pytype: disable=bad-return-type
 

@@ -29,7 +29,7 @@ used in association with the agent.
 import copy
 import dataclasses
 import itertools
-from typing import Any, Callable, Optional, Set, Tuple, Union
+from typing import Any, Callable, Optional, Union
 
 import dm_env
 import jax.numpy as jnp
@@ -106,7 +106,7 @@ class PycoworldEnvironment(serializable_environment.SerializableEnvironment):
       self,
       seed: int,
       game_factory: Callable[[jnp.ndarray], pycolab_engine.Engine],
-      possible_actions: Set[int],
+      possible_actions: set[int],
       default_reward: Optional[float],
       observation_distiller: ObservationDistiller,
       max_iterations: Optional[int] = None,
@@ -227,7 +227,7 @@ class PycoworldEnvironment(serializable_environment.SerializableEnvironment):
       observations: Any,
       reward: Optional[float],
       discount: Optional[float],
-  ) -> Tuple[Any, Optional[float], Optional[float]]:
+  ) -> tuple[Any, Optional[float], Optional[float]]:
     """Applies defaults and standard packaging to timestep values if needed."""
     observations = copy.deepcopy(self._observation_distiller(observations))
     if isinstance(observations, np.ndarray):

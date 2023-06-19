@@ -20,11 +20,11 @@ the other is green. On each episode only one of the rooms is opened (and the
 other is closed by a door) and the agent's goal is to enter the opened room
 and reach the green apple.
 """
-from typing import Any, MutableMapping, Tuple
+
+from typing import Any, MutableMapping
 
 import jax
 import numpy as np
-
 from pycolab import engine
 from pycolab import things as plab_things
 
@@ -48,7 +48,7 @@ class RedGreenApplesLevel(base_level.PycoworldLevel):
   def foreground_and_background(
       self,
       rng: np.ndarray,
-  ) -> Tuple[np.ndarray, np.ndarray]:
+  ) -> tuple[np.ndarray, np.ndarray]:
     """See base class."""
     if jax.random.uniform(rng) < 0.5:
       # Room on the left is open.

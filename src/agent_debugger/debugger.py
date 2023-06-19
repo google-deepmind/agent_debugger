@@ -17,7 +17,7 @@
 
 import contextlib
 import operator
-from typing import Any, Callable, List, Optional, Sequence, Tuple
+from typing import Any, Callable, Optional, Sequence
 
 import jax.random as jrandom
 
@@ -129,10 +129,11 @@ class Debugger:
       self,
       initial_node: node_lib.Node,
       maximum_length: int,
-      endpoint: Optional[Callable[[node_lib.Node],
-                                  bool]] = operator.attrgetter('is_terminal'),
+      endpoint: Optional[Callable[[node_lib.Node], bool]] = operator.attrgetter(
+          'is_terminal'
+      ),
       raise_endpoint_not_reached: bool = False,
-  ) -> List[node_lib.Node]:
+  ) -> list[node_lib.Node]:
     """Returns the list of nodes obtained by stepping from an initial node.
 
     Args:
@@ -180,10 +181,11 @@ class Debugger:
       maximum_length: int,
       rollout_breakpoint: Callable[[node_lib.Node], bool],
       intervention_at_breakpoint: Callable[[node_lib.Node], node_lib.Node],
-      endpoint: Optional[Callable[[node_lib.Node],
-                                  bool]] = operator.attrgetter('is_terminal'),
+      endpoint: Optional[Callable[[node_lib.Node], bool]] = operator.attrgetter(
+          'is_terminal'
+      ),
       raise_breakpoint_not_reached: bool = True,
-  ) -> List[node_lib.Node]:
+  ) -> list[node_lib.Node]:
     """Returns a modified version of get_rollout, with an intervention.
 
     The user can provide a breakpoint function to branch at a given point in
@@ -226,8 +228,8 @@ class Debugger:
   def get_actions_rewards(
       self,
       rollout: Sequence[node_lib.Node],
-      cast_action: Callable[[Any], Any] = lambda x: x
-  ) -> Tuple[Sequence[Optional[Any]], Sequence[float]]:
+      cast_action: Callable[[Any], Any] = lambda x: x,
+  ) -> tuple[Sequence[Optional[Any]], Sequence[float]]:
     """Returns the actions and rewards of a rollout in a nice format.
 
     Args:

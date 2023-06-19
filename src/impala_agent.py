@@ -15,7 +15,7 @@
 
 """Impala agent class, which follows the DebuggerAgent interface."""
 
-from typing import Tuple, Any, Callable
+from typing import Any, Callable
 
 import dm_env
 import haiku as hk
@@ -60,7 +60,7 @@ class ImpalaAgent(agent.DebuggerAgent):
       self,
       timestep: dm_env.TimeStep,
       state: types.AgentState,
-  ) -> Tuple[types.Action, Any, types.AgentState]:
+  ) -> tuple[types.Action, Any, types.AgentState]:
     """Steps the agent in the environment."""
     net_out, next_state = self._apply_fn(self._params, timestep,
                                          state.internal_state)

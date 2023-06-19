@@ -15,7 +15,7 @@
 
 """Utilities for constructing pycoworld levels."""
 
-from typing import Optional, Sequence, Tuple
+from typing import Optional, Sequence
 
 import chex
 import jax
@@ -53,12 +53,12 @@ def room(
 
 def sample_positions(
     rng: np.ndarray,
-    height_range: Tuple[int, int],
-    width_range: Tuple[int, int],
+    height_range: tuple[int, int],
+    width_range: tuple[int, int],
     number_samples: int,
     replace: bool = True,
     exclude: Optional[np.ndarray] = None,
-) -> Sequence[Tuple[int, int]]:
+) -> Sequence[tuple[int, int]]:
   """Uniformly samples random positions in a 2d grid.
 
   Args:

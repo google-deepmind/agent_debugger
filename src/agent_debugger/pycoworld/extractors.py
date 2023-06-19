@@ -18,8 +18,6 @@
 The extractors act on the node directly, and extract information from it.
 """
 
-from typing import List
-
 import numpy as np
 from pycolab import things
 
@@ -35,7 +33,7 @@ class PycoworldExtractors:
       self,
       node: node_lib.Node,
       element_id: int,
-  ) -> List[types.Position]:
+  ) -> list[types.Position]:
     """Returns the position of a sprite/drape/background element.
 
     Args:

@@ -14,7 +14,6 @@
 # ==============================================================================
 
 """Apples level."""
-from typing import Tuple
 
 import numpy as np
 
@@ -37,7 +36,7 @@ class ApplesLevel(base_level.PycoworldLevel):
     """Initializes the level.
 
     Args:
-      start_type: Type of random initialization: 'full_room' forces random
+      start_type: The type of random initialization: 'full_room' forces random
         initialization using all cells in the room, 'corner' forces random
         initialization of the player around one corner of the room and the
         reward is initialized close to the other corner.
@@ -53,7 +52,7 @@ class ApplesLevel(base_level.PycoworldLevel):
   def foreground_and_background(
       self,
       rng: np.ndarray,
-  ) -> Tuple[np.ndarray, np.ndarray]:
+  ) -> tuple[np.ndarray, np.ndarray]:
     """See base class."""
     foreground = utils.room(self._height, self._width)
 

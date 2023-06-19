@@ -15,7 +15,7 @@
 
 """Neural network used in Impala trained agents."""
 
-from typing import NamedTuple, Optional, Sequence, Tuple, Union
+from typing import NamedTuple, Optional, Sequence, Union
 
 import dm_env
 import haiku as hk
@@ -74,9 +74,9 @@ class RecurrentConvNet(hk.RNNCore):
       self,
       x: dm_env.TimeStep,
       state: NetState,
-  ) -> Tuple[NetOutput, NetState]:
+  ) -> tuple[NetOutput, NetState]:
     """Steps the net, applying a forward pass of the neural network."""
-    # Apply torso.
+    # Apply torso.
     observation = x.observation['board'].astype(dtype=jnp.float32) / 255
     observation = jnp.expand_dims(observation, axis=0)
     output = self._torso(observation)

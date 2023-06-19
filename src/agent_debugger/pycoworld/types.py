@@ -15,18 +15,18 @@
 
 """Specific types for the Pycoworld debugger."""
 
-from typing import Tuple, Union
+from typing import Union
 
 from pycolab import engine as engine_lib
 from pycolab import things
 
 PycolabPosition = things.Sprite.Position
-Position = Union[PycolabPosition, Tuple[float, float]]
+Position = Union[PycolabPosition, tuple[float, float]]
 PycolabEngine = engine_lib.Engine
 
 
 def to_pycolab_position(pos: Position) -> PycolabPosition:
-  """Returns a PycolabPosition from a Tuple or a PycolabPosition."""
+  """Returns a PycolabPosition from a tuple or a PycolabPosition."""
   if isinstance(pos, tuple):
     return PycolabPosition(*pos)
   return pos

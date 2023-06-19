@@ -16,7 +16,7 @@
 """Base class of agent recognized by the Agent Debugger."""
 
 import abc
-from typing import Any, Tuple
+from typing import Any
 
 import chex
 import dm_env
@@ -41,5 +41,5 @@ class DebuggerAgent(abc.ABC):
       self,
       timestep: dm_env.TimeStep,
       state: types.AgentState,
-  ) -> Tuple[types.Action, Any, types.AgentState]:
+  ) -> tuple[types.Action, Any, types.AgentState]:
     """Steps the agent, taking a timestep (including observation) and a state."""

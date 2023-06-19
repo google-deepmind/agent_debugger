@@ -16,7 +16,7 @@
 """Level config."""
 
 import abc
-from typing import Any, Dict, List, Mapping, Optional, Sequence, Tuple, Union
+from typing import Any, Mapping, Optional, Sequence, Union
 
 import numpy as np
 from pycolab import ascii_art
@@ -30,12 +30,12 @@ _ACTIONS = range(4)
 Tile = default_constants.Tile
 
 
-def default_sprites() -> Dict[str, Any]:
+def default_sprites() -> dict[str, Any]:
   """Returns the default mapping of characters to sprites in the levels."""
   return {chr(Tile.PLAYER): default_sprites_and_drapes.PlayerSprite}
 
 
-def default_drapes() -> Dict[str, Any]:
+def default_drapes() -> dict[str, Any]:
   """Returns the default mapping of characters to drapes in the levels."""
   return {
       chr(Tile.WALL): default_sprites_and_drapes.WallDrape,
@@ -69,7 +69,7 @@ def default_drapes() -> Dict[str, Any]:
   }
 
 
-def default_schedule() -> List[str]:
+def default_schedule() -> list[str]:
   """Returns the default update schedule of sprites and drapes in the levels."""
   return [
       chr(Tile.PLAYER),  # PlayerSprite
@@ -104,7 +104,7 @@ def default_schedule() -> List[str]:
   ]
 
 
-def _numpy_to_str(array: np.ndarray) -> List[str]:
+def _numpy_to_str(array: np.ndarray) -> list[str]:
   """Converts numpy array into a list of strings.
 
   Args:
@@ -167,7 +167,7 @@ class PycoworldLevel(abc.ABC):
   def foreground_and_background(
       self,
       rng: np.ndarray,
-  ) -> Tuple[np.ndarray, np.ndarray]:
+  ) -> tuple[np.ndarray, np.ndarray]:
     """Generates the foreground and background arrays of the level."""
 
   def sample_game(self, rng: np.ndarray) -> engine.Engine:

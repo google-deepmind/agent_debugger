@@ -17,7 +17,7 @@
 
 import copy
 import dataclasses
-from typing import List, Union
+from typing import Union
 
 import jax
 
@@ -90,7 +90,7 @@ class DefaultInterventions:
   def change_agent_next_actions(
       self,
       node: node_lib.Node,
-      forced_next_actions: List[types.Action],
+      forced_next_actions: list[types.Action],
   ) -> node_lib.Node:
     """Changes the next actions of the agent at a given node.
 
