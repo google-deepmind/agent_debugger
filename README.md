@@ -1,7 +1,7 @@
 # Causal Analysis of Agent Behavior for AI Safety
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/deepmind/agent_debugger/master/overview.pdf" alt="Overview figure"/>
+  <img src="https://raw.githubusercontent.com/deepmind/agent_debugger/master/overview.jpg" alt="Overview figure"/>
 </p>
 
 This repository provides an implementation of our paper [Causal Analysis of Agent Behavior for AI Safety](https://arxiv.org/abs/2103.03938).
