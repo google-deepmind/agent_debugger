@@ -1,4 +1,8 @@
-# Agent Debugger
+# Causal Analysis of Agent Behavior for AI Safety
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/deepmind/agent_debugger/master/overview.pdf" alt="Overview figure"/>
+</p>
 
 This repository provides an implementation of our paper [Causal Analysis of Agent Behavior for AI Safety](https://arxiv.org/abs/2103.03938).
 
@@ -51,7 +55,7 @@ conda activate agent_debugger
 export PYTHONPATH=$(pwd)
 ```
 
-See the 'experiments' [notebook](https://colab.research.google.com/github/deepmind/agent_debugger/blob/master/colabs/experiments.ipynb) to reproduce the experiments of the paper.
+See the [experiments notebook](https://colab.research.google.com/github/deepmind/agent_debugger/blob/master/colabs/experiments.ipynb) to reproduce the experiments of the paper.
 
 
 ## Citing this work
