@@ -1,4 +1,5 @@
 chex
+dill
 dm-env
 dm-haiku
 dm-tree

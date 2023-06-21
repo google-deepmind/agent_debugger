@@ -16,46 +16,9 @@ The main tool is the "Agent Debugger", which can be used to perform causal inter
 We currently only support the environment Pycoworld, a 2D gridworld based on the open source game engine [Pycolab](https://github.com/deepmind/pycolab).
 
 
-## Installation
-
-Clone the source code into a local directory:
-```bash
-git clone https://github.com/deepmind/agent_debugger.git
-cd agent_debugger
-```
-
-`pip install -r requirements.txt` will install all required dependencies.
-This is best done inside a [conda environment](https://www.anaconda.com/).
-To that end, install [Anaconda](https://www.anaconda.com/download#downloads).
-Then, create and activate the conda environment:
-```bash
-conda create --name agent_debugger
-conda activate agent_debugger
-```
-
-Install `pip` and use it to install all the dependencies:
-```bash
-conda install pip
-pip install -r requirements.txt
-```
-
-If you have a GPU available (highly recommended for fast training), then you can install JAX with CUDA support.
-```bash
-pip install --upgrade "jax[cuda12_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
-```
-Note that the jax version must correspond to the existing CUDA installation you wish to use (CUDA 12 in the example above).
-Please see the [JAX documentation](https://github.com/google/jax#installation) for more details.
-
-
 ## Usage
 
-Before running any code, make sure to activate the conda environment and set the `PYTHONPATH`:
-```bash
-conda activate agent_debugger
-export PYTHONPATH=$(pwd)
-```
-
-See the [experiments notebook](https://colab.research.google.com/github/deepmind/agent_debugger/blob/master/colabs/experiments.ipynb) to reproduce the experiments of the paper.
+To reproduce the experiments of the paper, run the [experiments notebook](https://colab.research.google.com/github/deepmind/agent_debugger/blob/master/colabs/experiments.ipynb).
 
 
 ## Citing this work
